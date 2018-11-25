@@ -1,0 +1,85 @@
+﻿@model Ron_Financial_Management_System.Models.systemuser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        #login-div{
+            position:absolute;
+            left:40%;
+            top:40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+            color:white;
+            background-color:teal;
+        }
+        .field-validation-error{
+            color:white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:underline"> User Login</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.UserName)
+
+                </td>
+                <td>
+                    @Html.EditorFor(Model => Model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(Model => Model.UserName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(Model => Model.Password)</td>
+                <td>@Html.EditorFor(Model => Model.Password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(Model => Model.Password)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="field-validation-error">
+                    @Html.DisplayFor(Model => Model.LoginErrorMessage)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Login" />
+                    <input type="submit" name="name" value="Change password" />
+                    <input type="reset" name="name" value="Cancel" />
+                </td>
+            <tr>
+                <td></td>
+                <td style="text-decoration:underline"> © Copyright 2018  Ron Technologies Ltd</td>
+            </tr>
+           
+        </table>
+        }
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

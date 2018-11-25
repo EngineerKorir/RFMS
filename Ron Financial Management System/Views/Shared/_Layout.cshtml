@@ -1,0 +1,101 @@
+﻿@model Ron_Financial_Management_System.Models.MenuModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Ron.ico" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    @*<script src="@url.Content("~/Scripts/jquery-1.8.3.js")" type="text/javascript"></script>
+        <script src="@url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>*@
+    <script src="../../Scripts/script.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $("#accordian h3").click(function () {
+                $("#accordian ul ul").slideUp();
+                if (!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    @using System.Web.Optimization
+    @*@model Ron_Financial_Management_System.Models.MenuModel*@
+    @using (Html.BeginForm("_Layout", "Shared"))
+
+
+    {
+        <div id="wrapper">
+            <div id="menuTop">
+                <table>
+                    <tr>
+                        <td align="center"><a href="@Url.Action("Logout", "Login")">Logged In As:</a> </td>
+                        <td align="center"><a href="@Url.Action("Logout", "Login")">Last Login:</a></td>
+                        <td align="center"><a href="@Url.Action("Logout", "Login")">Logout</a> </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="menuLogo">
+                Logo
+            </div>
+            <div id="banner">
+                <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/Images/RFMS_Brand.png")" />
+            </div>
+            <div id="columnLeft">
+                <div id="accordian">
+                    <ul>
+                        <li>
+                            @{
+
+                                if (Model == null)
+                                {
+
+                                }
+                                else
+                                {
+                                    foreach (var MenuItem in Model.MainMenuModel)
+                                    {
+                                        var SubMenuItem = Model.SubMenuModel.Where(m => m.MainMenuID == MenuItem.ID);
+                                        <h3><a href="@MenuItem.MainMenuURL"> @MenuItem.MainMenuItem </a></h3>
+                                        if (SubMenuItem.Count() > 0)
+                                        {
+                                            <ul>
+                                                @foreach (var SubItem in SubMenuItem)
+                                                {
+                                                    <li><a href='@SubItem.SubMenuURL'>@SubItem.SubMenuItem</a></li>
+                                                }
+                                            </ul>
+                                        }
+                                    }
+                                }
+                            }
+                    </ul>
+                </div>
+                <br />
+            </div>
+            <div id="content"> @RenderBody()</div>
+            <div id="menuBottom" aling="center">
+                &copy; Copyright @DateTime.Now.Year Ron Technologies Ltd
+            </div>
+        </div>
+                                }
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

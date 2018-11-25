@@ -1,0 +1,158 @@
+﻿/*Basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#chartContainer {
+    width: 500px;
+    padding-left: 100px;
+    padding-right: 50px;
+    margin-top: 30px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+body {
+    background: White;
+    font-family: Nunito, arial, verdana;
+    
+    
+}
+table {
+    table-layout: auto;
+    width: 100%;
+}
+th {
+    height: 50px;
+}
+.collapse {
+    border-collapse: collapse;
+}
+
+#wrapper{
+    width:100%;
+    height:100%;
+
+}
+#menuTop {
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    padding-top: 5px;
+}
+#menuLogo {
+    width: 20%;
+    height: 110px;
+    float: left;
+    background-color:white;
+}
+#banner {
+    width: 80%;
+    height: 110px;
+    background-color: #96CDCD;
+    float: right;
+}
+#columnLeft {
+    width: 20%;
+    height: 100%;
+    background-color:whitesmoke;
+    float: left;
+}
+#content {
+    width: 80%;
+    height:100%;
+    background-color:white;
+    float: right;
+}
+
+#menuBottom {
+    width: 100%;
+    height: 75px;
+    background-color: #B0C3CA;
+    float: right;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+#accordian {
+    background: #004050;
+    width: 250px;
+    margin: 0px auto 0 auto;
+    color: white;
+    /*Some cool shadow and glow effect*/
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+    /*heading styles*/
+    #accordian h3 {
+        font-size: 12px;
+        line-height: 34px;
+        padding: 0 0px;
+        cursor: pointer;
+        /*fallback for browsers not supporting gradients*/
+        background: #003040;
+        background: linear-gradient(#003040, #002535);
+    }
+        /*heading hover effect*/
+        #accordian h3:hover {
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+        }
+        /*iconfont styles*/
+        #accordian h3 a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 27px;
+            padding: 0 15px;
+            /*transition for smooth hover animation*/
+        }
+
+            #accordian h3 a:hover {
+                color: #E1E1E1;
+            }
+    /*list items*/
+    #accordian li {
+        list-style-type: none;
+        background: #4D6974;
+    }
+    /*links*/
+    #accordian ul ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 11px;
+        line-height: 27px;
+        display: block;
+        padding: 0 15px;
+        /*transition for smooth hover animation*/
+        transition: all 0.15s;
+    }
+        /*hover effect on links*/
+        #accordian ul ul li a:hover {
+            background: #4da1a1;
+            border-left: 5px solid lightgreen;
+        }
+    /*Lets hide the non active LIs by default*/
+    #accordian ul ul {
+        display: none;
+    }
+
+    #accordian li.active ul {
+        display: block;
+    }
