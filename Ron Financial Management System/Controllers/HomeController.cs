@@ -42,7 +42,7 @@ namespace Ron_Financial_Management_System.Controllers
             List<SubMenu> ObjSubMenu = new List<SubMenu>();
             ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Customer Information", SubMenuURL = "MemberReg" });
             ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Chart Of Accounts", SubMenuURL = "EmployerReg" });
-            ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Loans General Setup", SubMenuURL = "#" });
+            ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Loans General Setup", SubMenuURL = "CompanyInfo" });
             ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Account Types Setup", SubMenuURL = "#" });
             ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Company Configurations", SubMenuURL = "#" });
             ObjSubMenu.Add(new SubMenu { MainMenuID = 2, SubMenuItem = "Member Setup", SubMenuURL = "#" });

@@ -122,6 +122,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\CompanyInfoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyInfoModel.edmx</DependentUpon>
+      <LastGenOutput>CompanyInfoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CompanyInfoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyInfoModel.edmx</DependentUpon>
+      <LastGenOutput>CompanyInfoModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\CompanyProfile.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CompanyProfile.edmx</DependentUpon>
@@ -179,6 +189,13 @@
     <Content Include="Models\CompanyProfile.edmx.diagram">
       <DependentUpon>CompanyProfile.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\CompanyInfoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CompanyInfoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CompanyInfoModel.edmx.diagram">
+      <DependentUpon>CompanyInfoModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -206,6 +223,7 @@
     </Content>
     <Content Include="Views\MemberReg\Index.cshtml" />
     <Content Include="Views\EmployerReg\Index.cshtml" />
+    <Content Include="Views\CompanyInfo\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -217,6 +235,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\ChartTypesController.cs" />
+    <Compile Include="Controllers\CompanyInfoController.cs" />
     <Compile Include="Controllers\CompanyProfileController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\EmployerRegController.cs" />
@@ -229,11 +248,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="member.cs" />
+    <Compile Include="Models\CompanyInfoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyInfoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyInfoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyInfoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyInfoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyInfoModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employer.cs" />
     <Compile Include="Models\EmployerRegModel.cs" />
     <Compile Include="Models\MemberRegModel.cs" />
     <Compile Include="Models\campany_profile.cs">
-      <DependentUpon>CompanyProfile.tt</DependentUpon>
+      <DependentUpon>CompanyInfoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CompanyProfile.Context.cs">
       <AutoGen>True</AutoGen>
