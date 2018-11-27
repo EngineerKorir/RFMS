@@ -11,7 +11,7 @@ namespace Ron_Financial_Management_System.Controllers
         // GET: EmployerReg
         public ActionResult Index()
         {
-            return View();
+			return View();
         }
     }
 }

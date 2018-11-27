@@ -17,9 +17,9 @@
     @Html.AntiForgeryToken()
     }
 <div class="form-horizontal">
-    <h4>Member Registration</h4>
+    <h4><strong>Member Registration</strong></h4>
     <hr />
-    <h6>Account Information</h6>
+    <h6><strong>Account Information</strong></h6>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="row form-group">
@@ -75,7 +75,7 @@
         </div>
 
     </div>
-    <h6>Member Personal Details</h6>
+    <h6><strong>Member Personal Details</strong></h6>
     <hr />
     <div class="row form-group">
         <div class="form-group col-md-4">
@@ -141,6 +141,7 @@
         </div>
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.Gender, "Gender")
+           
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
@@ -171,26 +172,18 @@
                 @Html.ValidationMessageFor(model => model.homaddress, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group  col-md-4">
+            @Html.LabelFor(model => model.Krapin,"Kra pin")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Krapin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Krapin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
     </div>
-    <h6>Nominee Details</h6>
+    <h6><strong>Nominee Details</strong></h6>
     <hr />
     <div class="row">
-
-
-
-
-
-    </div>
-    <div class="row">
-
-
-
-
-    </div>
-    <div class="row">
-
-
-
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -198,8 +191,6 @@
                 @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -223,39 +214,6 @@
                 @Html.ValidationMessageFor(model => model.regstatus, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
-    <div class="row">
-
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.Employercode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Employercode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Employercode, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.stationcode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.stationcode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.stationcode, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-
-
-        <div class="form-group  col-md-4">
-            @Html.LabelFor(model => model.Krapin, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Krapin, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Krapin, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.BankAccountNo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -263,83 +221,20 @@
                 @Html.ValidationMessageFor(model => model.BankAccountNo, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.Bankcode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Bankcode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Bankcode, "", new { @class = "text-danger" })
-            </div>
-        </div>
     </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.Bankbrachcode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Bankbrachcode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Bankbrachcode, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_CTY_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_CTY_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_CTY_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_CST_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_CST_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_CST_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_LOC_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_LOC_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_LOC_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_SLO_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_SLO_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_SLO_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_VIL_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_VIL_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_VIL_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.MEM_GRP_CODE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MEM_GRP_CODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MEM_GRP_CODE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
+</div>
+<div class="row">
     <div class="form-group col-md-4">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />
         </div>
     </div>
-    
-   </div>
-}
-
-    <div>
+    <div class="form-group col-md-4">
         @Html.ActionLink("Back to List", "Index")
     </div>
+
+</div>
+    }
+
+ 
