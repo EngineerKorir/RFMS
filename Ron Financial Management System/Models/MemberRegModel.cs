@@ -52,6 +52,8 @@ namespace Ron_Financial_Management_System
                 .Property(e => e.Gender)
                 .IsUnicode(false);
 
+
+
             modelBuilder.Entity<member>()
                 .Property(e => e.Nationality)
                 .IsUnicode(false);

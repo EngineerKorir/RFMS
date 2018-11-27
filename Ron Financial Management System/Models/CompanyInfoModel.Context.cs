@@ -13,10 +13,10 @@ namespace Ron_Financial_Management_System.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RonModels : DbContext
+    public partial class CompanyEntities : DbContext
     {
-        public RonModels()
-            : base("name=RonModels")
+        public CompanyEntities()
+            : base("name=CompanyEntities")
         {
         }
     
